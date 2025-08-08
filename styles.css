@@ -1,0 +1,11 @@
+/* Additional styles for AIAGENTSAGE */
+
+/* Remove default focus outlines for a cleaner look */
+*:focus {
+  outline: none;
+}
+
+/* Utility class for subtle glowing card borders (not currently used but available for future customization) */
+.card-glow {
+  box-shadow: 0 0 0 1px rgba(16, 185, 129, 0.25), 0 10px 30px rgba(16, 185, 129, 0.08);
+}
