@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AIAGENTSAGE — Agent Hub</title>
+  <meta name="description" content="Try 12 free AI agents for SME workflows: lead gen, outreach, support, content, and more." />
+  <!-- Tailwind CSS via CDN for rapid styling -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="/assets/styles.css" />
+</head>
+<body class="bg-slate-950 text-slate-100 font-[Inter]">
+  <!-- Header with logo and email display -->
+  <header class="max-w-7xl mx-auto px-6 py-6 flex items-center justify-between">
+    <a href="/" class="flex items-center gap-2">
+      <div class="w-9 h-9 rounded-2xl bg-gradient-to-br from-emerald-400 to-cyan-500 grid place-content-center font-extrabold text-slate-900">AI</div>
+      <span class="font-extrabold text-xl tracking-tight">AIAGENTSAGE</span>
+    </a>
+    <div class="flex items-center gap-3 text-sm text-slate-300">
+      <span id="userEmail" class="hidden"></span>
+      <button id="changeEmailBtn" class="px-3 py-1.5 rounded-lg border border-slate-700 hover:border-slate-500">Change email</button>
+    </div>
+  </header>
+
+  <main class="max-w-7xl mx-auto px-6 pb-24">
+    <h1 class="text-3xl font-extrabold">Agent Hub</h1>
+    <p class="text-slate-300 mt-2">Enter your email to unlock and run agents. Results appear below each card.</p>
+    <!-- Agent cards will populate here via JavaScript -->
+    <div id="agentGrid" class="mt-8 grid md:grid-cols-2 xl:grid-cols-3 gap-6"></div>
+  </main>
+
+  <!-- Email gate modal to capture user email -->
+  <dialog id="emailGate" class="rounded-2xl border border-slate-800 bg-slate-900/90 backdrop:bg-black/60 p-0 w-full max-w-lg">
+    <form id="emailForm" method="dialog" class="p-6">
+      <h2 class="text-2xl font-extrabold">Unlock the Agent Hub</h2>
+      <p class="text-slate-300 mt-2">Enter your work email to access 12 agents for free.</p>
+      <input id="emailInput" type="email" required placeholder="you@company.com" class="mt-4 w-full px-4 py-3 rounded-xl bg-slate-950 border border-slate-700 outline-none focus:border-emerald-400" />
+      <label class="flex items-center gap-2 mt-3 text-xs text-slate-400">
+        <input id="consent" type="checkbox" required class="accent-emerald-400" />
+        I agree to receive occasional product updates.
+      </label>
+      <div class="mt-5 flex justify-end gap-3">
+        <button type="button" id="cancelEmail" class="px-4 py-2 rounded-xl border border-slate-700">Cancel</button>
+        <button type="submit" class="px-5 py-2 rounded-xl bg-gradient-to-r from-emerald-400 to-cyan-300 text-slate-900 font-semibold">Unlock</button>
+      </div>
+    </form>
+  </dialog>
+
+  <!-- Footer -->
+  <footer class="border-t border-slate-800/60">
+    <div class="max-w-7xl mx-auto px-6 py-10 text-sm text-slate-400 flex flex-col md:flex-row gap-4 md:items-center md:justify-between">
+      <span>© <span id="year"></span> AIAGENTSAGE.</span>
+      <a class="hover:text-white" href="/">Back to home</a>
+    </div>
+  </footer>
+
+  <!-- Module-based JS for agent logic -->
+  <script type="module" src="/assets/app.js"></script>
+  <script>
+    // Set the dynamic year in the footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
