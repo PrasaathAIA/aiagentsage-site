@@ -10,7 +10,7 @@
 */
 
 // TODO: Replace this URL with your serverless endpoint (e.g. https://aiagentsage-proxy.<your-handle>.workers.dev/api/agent)
-const BACKEND_URL = tile business agents
+const BACKEND_URL = "https://v0-new-site-w8vcwoq3w-s18011998-1500s-projects.vercel.app"
 const AGENTS = [
   {
     id: "lead-researcher",
