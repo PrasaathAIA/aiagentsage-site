@@ -10,7 +10,7 @@
 */
 
 // TODO: Replace this URL with your serverless endpoint (e.g. https://aiagentsage-proxy.<your-handle>.workers.dev/api/agent)
-const BACKEND_URL = "aiagentsage-4zh8k3b49-s18011998-1500s-projects.vercel.app/api/agent"
+const BACKEND_URL = "https://aiagentsage.vercel.app/api/agent"
 const AGENTS = [
   {
     id: "lead-researcher",
