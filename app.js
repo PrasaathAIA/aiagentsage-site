@@ -10,9 +10,7 @@
 */
 
 // TODO: Replace this URL with your serverless endpoint (e.g. https://aiagentsage-proxy.<your-handle>.workers.dev/api/agent)
-const BACKEND_URL = "https://YOUR_SERVERLESS_DOMAIN/api/agent";
-
-// Define 12 versatile business agents
+const BACKEND_URL = tile business agents
 const AGENTS = [
   {
     id: "lead-researcher",
@@ -32,6 +30,7 @@ const AGENTS = [
     id: "followup-generator",
     name: "Follow-up Sequencer",
     hint: "What did they not reply to?",
+ 
     system: "Polite, persistent follow-ups with value add.",
     template: (i) => `Create a 4-step follow-up sequence for this prior email thread/context: ${i}.`
   },
@@ -78,27 +77,15 @@ const AGENTS = [
     template: (i) => `Clean and structure minutes with owners and due dates: ${i}.`
   },
   {
+    
     id: "contract-extractor",
     name: "Contract Extractor",
     hint: "Paste a contract clause.",
     system: "Extract key terms and obligations; not legal advice.",
     template: (i) => `Extract parties, term, renewal, fees, SLAs, liabilities from: ${i}.`
   },
-  {
-    id: "csv-cleaner",
-    name: "CSV Cleaner",
-    hint: "Paste messy CSV/text.",
-    system: "Detect columns, suggest cleaning steps, output cleaned table.",
-    template: (i) => `Find columns and output a cleaned CSV from: ${i}.`
-  },
-  {
-    id: "idea-expander",
-    name: "Idea Expander",
-    hint: "Describe a business idea.",
-    system: "Interrogate assumptions and propose experiments.",
-    template: (i) => `Give 5 assumptions, 5 experiments, and KPIs for: ${i}.`
-  }
-];
+   }
+  
 
 // Get references to DOM elements
 const grid = document.getElementById('agentGrid');
@@ -131,6 +118,7 @@ function renderCards() {
       <p class="text-slate-400 text-sm mt-1">${a.hint}</p>
       <textarea id="input-${a.id}" class="mt-3 w-full h-28 px-3 py-2 rounded-xl bg-slate-950 border border-slate-800 text-sm outline-none focus:border-emerald-400" placeholder="${a.hint}"></textarea>
       <pre id="out-${a.id}" class="mt-3 text-sm whitespace-pre-wrap bg-slate-950 border border-slate-800 rounded-xl p-3 min-h-[88px]"></pre>
+      
       <div class="mt-3 flex gap-2">
         <button data-copy="${a.id}" class="copyBtn px-3 py-1.5 rounded-lg border border-slate-700 text-sm">Copy</button>
         <button data-save="${a.id}" class="saveBtn px-3 py-1.5 rounded-lg border border-slate-700 text-sm">Save .txt</button>
