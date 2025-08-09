@@ -33,6 +33,7 @@ const AGENTS = [
  
     system: "Polite, persistent follow-ups with value add.",
     template: (i) => `Create a 4-step follow-up sequence for this prior email thread/context: ${i}.`
+ 
   },
   {
     id: "support-macro",
@@ -68,7 +69,8 @@ const AGENTS = [
     hint: "Describe your product.",
     system: "Write conversion-focused copy for product pages.",
     template: (i) => `Write hero, features, objections, and CTA copy for: ${i}.`
-  },
+  }
+  ,
   {
     id: "meeting-minutes",
     name: "Meeting Minutes",
